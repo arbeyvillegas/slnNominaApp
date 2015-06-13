@@ -14,6 +14,35 @@ namespace NominaApp
         public FormPadre()
         {
             InitializeComponent();
+            
         }
+
+        protected virtual void CargarDatos()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected virtual void RecargarDatosGrid()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected void IniciarCargaDatos()
+        {
+            backgroundWorker1.RunWorkerAsync();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            this.CargarDatos();
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.RecargarDatosGrid();
+        }
+        
+
+        
     }
 }

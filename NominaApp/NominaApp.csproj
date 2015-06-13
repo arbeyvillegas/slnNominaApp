@@ -61,6 +61,12 @@
     <Compile Include="FormConfigEmpleado.Designer.cs">
       <DependentUpon>FormConfigEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConfigHoraExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfigHoraExtra.Designer.cs">
+      <DependentUpon>FormConfigHoraExtra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormContenedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormConfigEmpleado.resx">
       <DependentUpon>FormConfigEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfigHoraExtra.resx">
+      <DependentUpon>FormConfigHoraExtra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormContenedor.resx">
       <DependentUpon>FormContenedor.cs</DependentUpon>

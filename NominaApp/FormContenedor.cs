@@ -102,5 +102,35 @@ namespace NominaApp
                 childForm.Close();
             }
         }
+
+        private void configuracionHoraExtraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FormConfigHoraExtra formulario = this.ExisteFormulario <FormConfigHoraExtra>();
+            if (formulario == null)
+            {
+                formulario = new FormConfigHoraExtra();
+                formulario.MdiParent = this;
+                formulario.Show();
+            }
+            else
+            {
+                formulario.Activate();
+            }
+            
+        }
+
+        private T ExisteFormulario<T>() where T : FormPadre
+        {
+            T formulario = null;
+            for (int i = 0; i < this.MdiChildren.Length; i++)
+            {
+                if(typeof(T)== this.MdiChildren[i].GetType()){
+                    formulario = (T)this.MdiChildren[i];
+                    break;
+                }
+            }
+            return formulario;
+        }
     }
 }
