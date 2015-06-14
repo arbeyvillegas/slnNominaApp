@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace NominaApp
 {
-    public partial class FormConfigHoraExtra : NominaApp.FormPadre
+    public partial class FormEmpresaAfiliacion : NominaApp.FormPadre
     {
-        public FormConfigHoraExtra():base()
+        public FormEmpresaAfiliacion():base()
         {
             InitializeComponent();
             this.IniciarCargaDatos();
@@ -18,19 +18,19 @@ namespace NominaApp
 
         protected override void CargarDatos()
         {
-            tbconfighoraextraTableAdapter1.Fill(this.dsNomina.TBCONFIGHORAEXTRA);
+            this.tbempresaafiliacionTableAdapter1.Fill(this.dsNomina.TBEMPRESAAFILIACION);
         }
 
         protected override void RecargarDatosGrid()
         {
-            tBCONFIGHORAEXTRABindingSource.ResetBindings(false);
+            this.tBEMPRESAAFILIACIONBindingSource.ResetBindings(false);
         }
 
         public override void GuardarDatos()
         {
             this.Validate();
-            tBCONFIGHORAEXTRABindingSource.EndEdit();
-            tbconfighoraextraTableAdapter1.Update(this.dsNomina.TBCONFIGHORAEXTRA);
+            this.tBEMPRESAAFILIACIONBindingSource.EndEdit();
+            this.tbempresaafiliacionTableAdapter1.Update(this.dsNomina.TBEMPRESAAFILIACION);
         }
     }
 }

@@ -29,23 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsNomina = new NominaApp.dsNomina();
             this.tBCONFIGEMPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbconfigempTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBCONFIGEMPTableAdapter();
             this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
-            this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sALARIOBASEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aUXTRANSPORTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORDIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORHORADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMPJEFEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBCONFIGEMPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,6 +70,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(596, 431);
             this.dataGridView1.TabIndex = 0;
             // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            // 
             // dsNomina
             // 
             this.dsNomina.DataSetName = "DataSet1";
@@ -85,17 +93,12 @@
             // 
             this.tbempleadoTableAdapter1.ClearBeforeFill = true;
             // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
-            // 
             // eMPCEDDataGridViewTextBoxColumn
             // 
             this.eMPCEDDataGridViewTextBoxColumn.DataPropertyName = "EMP_CED";
             this.eMPCEDDataGridViewTextBoxColumn.DataSource = this.tBEMPLEADOBindingSource;
             this.eMPCEDDataGridViewTextBoxColumn.DisplayMember = "NOMBRE";
-            this.eMPCEDDataGridViewTextBoxColumn.HeaderText = "EMP_CED";
+            this.eMPCEDDataGridViewTextBoxColumn.HeaderText = "Empleado";
             this.eMPCEDDataGridViewTextBoxColumn.MinimumWidth = 150;
             this.eMPCEDDataGridViewTextBoxColumn.Name = "eMPCEDDataGridViewTextBoxColumn";
             this.eMPCEDDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -106,25 +109,41 @@
             // sALARIOBASEDataGridViewTextBoxColumn
             // 
             this.sALARIOBASEDataGridViewTextBoxColumn.DataPropertyName = "SALARIOBASE";
-            this.sALARIOBASEDataGridViewTextBoxColumn.HeaderText = "SALARIOBASE";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.sALARIOBASEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.sALARIOBASEDataGridViewTextBoxColumn.HeaderText = "Salario Base";
             this.sALARIOBASEDataGridViewTextBoxColumn.Name = "sALARIOBASEDataGridViewTextBoxColumn";
             // 
             // aUXTRANSPORTEDataGridViewTextBoxColumn
             // 
             this.aUXTRANSPORTEDataGridViewTextBoxColumn.DataPropertyName = "AUXTRANSPORTE";
-            this.aUXTRANSPORTEDataGridViewTextBoxColumn.HeaderText = "AUXTRANSPORTE";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.aUXTRANSPORTEDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.aUXTRANSPORTEDataGridViewTextBoxColumn.HeaderText = "Auxilio Transporte";
             this.aUXTRANSPORTEDataGridViewTextBoxColumn.Name = "aUXTRANSPORTEDataGridViewTextBoxColumn";
             // 
             // vALORDIADataGridViewTextBoxColumn
             // 
             this.vALORDIADataGridViewTextBoxColumn.DataPropertyName = "VALORDIA";
-            this.vALORDIADataGridViewTextBoxColumn.HeaderText = "VALORDIA";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.vALORDIADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.vALORDIADataGridViewTextBoxColumn.HeaderText = "Valor Día";
             this.vALORDIADataGridViewTextBoxColumn.Name = "vALORDIADataGridViewTextBoxColumn";
             // 
             // vALORHORADataGridViewTextBoxColumn
             // 
             this.vALORHORADataGridViewTextBoxColumn.DataPropertyName = "VALORHORA";
-            this.vALORHORADataGridViewTextBoxColumn.HeaderText = "VALORHORA";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.vALORHORADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.vALORHORADataGridViewTextBoxColumn.HeaderText = "Valor Hora";
             this.vALORHORADataGridViewTextBoxColumn.Name = "vALORHORADataGridViewTextBoxColumn";
             // 
             // eMPJEFEDataGridViewTextBoxColumn
@@ -132,7 +151,7 @@
             this.eMPJEFEDataGridViewTextBoxColumn.DataPropertyName = "EMP_JEFE";
             this.eMPJEFEDataGridViewTextBoxColumn.DataSource = this.tBEMPLEADOBindingSource;
             this.eMPJEFEDataGridViewTextBoxColumn.DisplayMember = "NOMBRE";
-            this.eMPJEFEDataGridViewTextBoxColumn.HeaderText = "EMP_JEFE";
+            this.eMPJEFEDataGridViewTextBoxColumn.HeaderText = "Jefe";
             this.eMPJEFEDataGridViewTextBoxColumn.MinimumWidth = 150;
             this.eMPJEFEDataGridViewTextBoxColumn.Name = "eMPJEFEDataGridViewTextBoxColumn";
             this.eMPJEFEDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -140,24 +159,19 @@
             this.eMPJEFEDataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPJEFEDataGridViewTextBoxColumn.Width = 200;
             // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
-            // 
-            // Form1
+            // FormConfigEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 431);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Location = new System.Drawing.Point(0, 0);
+            this.Name = "FormConfigEmpleado";
+            this.Text = "Configuración Empleado";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBCONFIGEMPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,7 +190,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORDIADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vALORHORADataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn eMPJEFEDataGridViewTextBoxColumn;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

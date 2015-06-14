@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace NominaApp
@@ -15,6 +17,9 @@ namespace NominaApp
 
         public FormContenedor()
         {
+            CultureInfo cultureInfo = new CultureInfo("es-CO");
+            Thread.CurrentThread.CurrentCulture = cultureInfo;
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;
             InitializeComponent();
         }
 
@@ -105,19 +110,24 @@ namespace NominaApp
 
         private void configuracionHoraExtraToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.AbrirFormlario<FormConfigHoraExtra>();
+            
+        }
 
-            FormConfigHoraExtra formulario = this.ExisteFormulario <FormConfigHoraExtra>();
+        private void AbrirFormlario<T>() where T:FormPadre,new()
+        {
+            T formulario = this.ExisteFormulario<T>();
             if (formulario == null)
             {
-                formulario = new FormConfigHoraExtra();
+                formulario = new T();
                 formulario.MdiParent = this;
                 formulario.Show();
+                formulario.WindowState = FormWindowState.Maximized;
             }
             else
             {
                 formulario.Activate();
             }
-            
         }
 
         private T ExisteFormulario<T>() where T : FormPadre
@@ -131,6 +141,68 @@ namespace NominaApp
                 }
             }
             return formulario;
+        }
+
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (HasChildren)
+            {
+                FormPadre formPadre = this.ActiveMdiChild as FormPadre;
+                if (formPadre != null)
+                {
+                    formPadre.GuardarDatos();
+                }
+            }
+        }
+
+        private void configuracionEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormConfigEmpleado>();
+        }
+
+        private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormEmpleado>();
+        }
+
+        private void empresaAfiliacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormEmpresaAfiliacion>();
+        }
+
+        private void afiliarEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormEmpleadoAfiliacion>();
+        }
+
+        private void bonificacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormBonificacion>();
+        }
+
+        private void deduccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormDeduccion>();
+        }
+
+        private void horasExtrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormHoraExtra>();
+        }
+
+        private void liquidacionNominaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormLiquidacionNomina>();
+        }
+
+        private void pagoEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormPagoEmpleado>();
+        }
+
+        private void pagoEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.AbrirFormlario<FormPagoEmpresa>();
         }
     }
 }

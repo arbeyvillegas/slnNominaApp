@@ -4,28 +4,32 @@ namespace NominaApp
     using System;
     using System.ComponentModel;
     using System.Windows.Forms;
-    public partial class FormConfigEmpleado : Form
+    public partial class FormConfigEmpleado  : NominaApp.FormPadre
     {
-        public FormConfigEmpleado()
+        public FormConfigEmpleado():base()
         {
             InitializeComponent();
+            this.IniciarCargaDatos();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            backgroundWorker1.RunWorkerAsync();
-        }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        protected override void CargarDatos()
         {
             this.tbempleadoTableAdapter1.Fill(this.dsNomina.TBEMPLEADO);
             this.tbconfigempTableAdapter1.Fill(this.dsNomina.TBCONFIGEMP);
         }
 
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        protected override void RecargarDatosGrid()
         {
             tBEMPLEADOBindingSource.ResetBindings(false);
             tBCONFIGEMPBindingSource.ResetBindings(false);
+        }
+
+        public override void GuardarDatos()
+        {
+            this.Validate();
+            this.tBCONFIGEMPBindingSource.EndEdit();
+            tbconfigempTableAdapter1.Update(this.dsNomina.TBCONFIGEMP);
         }
     }
 }

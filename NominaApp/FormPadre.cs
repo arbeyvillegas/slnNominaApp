@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace NominaApp
 {
     public partial class FormPadre : Form
     {
+
+        protected BindingSource bindingSource;
+
         public FormPadre()
         {
+            CultureInfo cultureInfo = new CultureInfo("es-CO");
+            Thread.CurrentThread.CurrentCulture = cultureInfo;
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;
             InitializeComponent();
             
         }
@@ -29,6 +37,7 @@ namespace NominaApp
 
         protected void IniciarCargaDatos()
         {
+            //this.CargarDatos();
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -41,8 +50,11 @@ namespace NominaApp
         {
             this.RecargarDatosGrid();
         }
-        
 
-        
+
+        public virtual void GuardarDatos()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

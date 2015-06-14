@@ -55,6 +55,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsNomina.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormBonificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBonificacion.Designer.cs">
+      <DependentUpon>FormBonificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConfigEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,14 +79,65 @@
     <Compile Include="FormContenedor.Designer.cs">
       <DependentUpon>FormContenedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDeduccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDeduccion.Designer.cs">
+      <DependentUpon>FormDeduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleado.Designer.cs">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmpleadoAfiliacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleadoAfiliacion.Designer.cs">
+      <DependentUpon>FormEmpleadoAfiliacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEmpresaAfiliacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpresaAfiliacion.Designer.cs">
+      <DependentUpon>FormEmpresaAfiliacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHoraExtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoraExtra.Designer.cs">
+      <DependentUpon>FormHoraExtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLiquidacionNomina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLiquidacionNomina.Designer.cs">
+      <DependentUpon>FormLiquidacionNomina.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPadre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPadre.Designer.cs">
       <DependentUpon>FormPadre.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPagoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoEmpleado.Designer.cs">
+      <DependentUpon>FormPagoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagoEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagoEmpresa.Designer.cs">
+      <DependentUpon>FormPagoEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormBonificacion.resx">
+      <DependentUpon>FormBonificacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormConfigEmpleado.resx">
       <DependentUpon>FormConfigEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -90,8 +147,32 @@
     <EmbeddedResource Include="FormContenedor.resx">
       <DependentUpon>FormContenedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDeduccion.resx">
+      <DependentUpon>FormDeduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpleado.resx">
+      <DependentUpon>FormEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpleadoAfiliacion.resx">
+      <DependentUpon>FormEmpleadoAfiliacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpresaAfiliacion.resx">
+      <DependentUpon>FormEmpresaAfiliacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHoraExtra.resx">
+      <DependentUpon>FormHoraExtra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLiquidacionNomina.resx">
+      <DependentUpon>FormLiquidacionNomina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPadre.resx">
       <DependentUpon>FormPadre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoEmpleado.resx">
+      <DependentUpon>FormPagoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagoEmpresa.resx">
+      <DependentUpon>FormPagoEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
