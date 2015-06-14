@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsNomina = new NominaApp.dsNomina();
-            this.tBBONIFICACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbbonificacionTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBBONIFICACIONTableAdapter();
-            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
-            this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.fECHADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORBONODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mOTIVODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ePMOTORGADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tBBONIFICACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbbonificacionTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBBONIFICACIONTableAdapter();
+            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
@@ -65,29 +65,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
-            // 
-            // dsNomina
-            // 
-            this.dsNomina.DataSetName = "DataSet1";
-            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBBONIFICACIONBindingSource
-            // 
-            this.tBBONIFICACIONBindingSource.DataMember = "TBBONIFICACION";
-            this.tBBONIFICACIONBindingSource.DataSource = this.dsNomina;
-            // 
-            // tbbonificacionTableAdapter1
-            // 
-            this.tbbonificacionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbempleadoTableAdapter1
-            // 
-            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // eMPCEDDataGridViewTextBoxColumn
             // 
@@ -102,12 +80,22 @@
             this.eMPCEDDataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPCEDDataGridViewTextBoxColumn.Width = 200;
             // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            // 
+            // dsNomina
+            // 
+            this.dsNomina.DataSetName = "DataSet1";
+            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // fECHADataGridViewTextBoxColumn
             // 
             this.fECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.fECHADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "d";
+            dataGridViewCellStyle7.NullValue = null;
+            this.fECHADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.fECHADataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fECHADataGridViewTextBoxColumn.MaxInputLength = 10;
             this.fECHADataGridViewTextBoxColumn.MinimumWidth = 30;
@@ -116,10 +104,10 @@
             // vALORBONODataGridViewTextBoxColumn
             // 
             this.vALORBONODataGridViewTextBoxColumn.DataPropertyName = "VALORBONO";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.vALORBONODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.vALORBONODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.vALORBONODataGridViewTextBoxColumn.HeaderText = "Valor Bono";
             this.vALORBONODataGridViewTextBoxColumn.Name = "vALORBONODataGridViewTextBoxColumn";
             // 
@@ -144,6 +132,20 @@
             this.ePMOTORGADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ePMOTORGADataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.ePMOTORGADataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tBBONIFICACIONBindingSource
+            // 
+            this.tBBONIFICACIONBindingSource.DataMember = "TBBONIFICACION";
+            this.tBBONIFICACIONBindingSource.DataSource = this.dsNomina;
+            this.tBBONIFICACIONBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBBONIFICACIONBindingSource_DataError);
+            // 
+            // tbbonificacionTableAdapter1
+            // 
+            this.tbbonificacionTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbempleadoTableAdapter1
+            // 
+            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
             // 
             // FormBonificacion
             // 

@@ -37,7 +37,6 @@ namespace NominaApp
 
         protected void IniciarCargaDatos()
         {
-            //this.CargarDatos();
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -48,13 +47,31 @@ namespace NominaApp
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.RecargarDatosGrid();
+            if (e.Error == null)
+            {
+                this.RecargarDatosGrid();
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio error en la conexión (Revise la cadena de conexión en .config): " + e.Error.Message);
+            }
+            
         }
 
 
         public virtual void GuardarDatos()
         {
             throw new NotImplementedException();
+        }
+
+        public void BindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ocurrió un error al actualizar los datos: " + e.Exception.Message);
+        }
+
+        public void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            MessageBox.Show("Ocurrió un error al actualizar los datos: " + e.Exception.Message);
         }
     }
 }

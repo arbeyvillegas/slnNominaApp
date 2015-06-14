@@ -47,6 +47,8 @@
             this.deduccionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.horasExtrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liquidaciónNóminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagoEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pagoEmpresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,8 +74,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pagoEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagoEmpresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -223,6 +224,20 @@
             this.liquidaciónNóminaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.liquidaciónNóminaToolStripMenuItem.Text = "Liquidación Nómina";
             this.liquidaciónNóminaToolStripMenuItem.Click += new System.EventHandler(this.liquidacionNominaToolStripMenuItem_Click);
+            // 
+            // pagoEmpleadoToolStripMenuItem
+            // 
+            this.pagoEmpleadoToolStripMenuItem.Name = "pagoEmpleadoToolStripMenuItem";
+            this.pagoEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.pagoEmpleadoToolStripMenuItem.Text = "Pago Empleado";
+            this.pagoEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.pagoEmpleadoToolStripMenuItem_Click);
+            // 
+            // pagoEmpresaToolStripMenuItem
+            // 
+            this.pagoEmpresaToolStripMenuItem.Name = "pagoEmpresaToolStripMenuItem";
+            this.pagoEmpresaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.pagoEmpresaToolStripMenuItem.Text = "Pago Empresa";
+            this.pagoEmpresaToolStripMenuItem.Click += new System.EventHandler(this.pagoEmpresaToolStripMenuItem_Click);
             // 
             // viewMenu
             // 
@@ -412,7 +427,8 @@
             // statusStrip
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel});
+            this.toolStripStatusLabel,
+            this.toolStripProgressBar1});
             this.statusStrip.Location = new System.Drawing.Point(0, 431);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(632, 22);
@@ -425,19 +441,11 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // pagoEmpleadoToolStripMenuItem
+            // toolStripProgressBar1
             // 
-            this.pagoEmpleadoToolStripMenuItem.Name = "pagoEmpleadoToolStripMenuItem";
-            this.pagoEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.pagoEmpleadoToolStripMenuItem.Text = "Pago Empleado";
-            this.pagoEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.pagoEmpleadoToolStripMenuItem_Click);
-            // 
-            // pagoEmpresaToolStripMenuItem
-            // 
-            this.pagoEmpresaToolStripMenuItem.Name = "pagoEmpresaToolStripMenuItem";
-            this.pagoEmpresaToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.pagoEmpresaToolStripMenuItem.Text = "Pago Empresa";
-            this.pagoEmpresaToolStripMenuItem.Click += new System.EventHandler(this.pagoEmpresaToolStripMenuItem_Click);
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // FormContenedor
             // 
@@ -509,6 +517,7 @@
         private System.Windows.Forms.ToolStripMenuItem liquidaciónNóminaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagoEmpleadoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pagoEmpresaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }
 

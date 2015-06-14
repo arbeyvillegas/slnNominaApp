@@ -127,6 +127,10 @@ namespace NominaApp
             else
             {
                 formulario.Activate();
+                if (formulario.WindowState != FormWindowState.Maximized)
+                {
+                    formulario.WindowState = FormWindowState.Maximized;
+                }
             }
         }
 
