@@ -68,6 +68,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // cEDULADataGridViewTextBoxColumn
             // 
@@ -140,6 +141,7 @@
             // 
             this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
             this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            this.tBEMPLEADOBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBEMPLEADOBindingSource_DataError);
             // 
             // dsNomina
             // 
@@ -157,6 +159,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormEmpleado";
             this.Text = "Empleado";
+            this.Load += new System.EventHandler(this.FormEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

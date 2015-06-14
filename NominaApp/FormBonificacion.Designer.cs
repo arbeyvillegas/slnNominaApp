@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -93,9 +93,9 @@
             // fECHADataGridViewTextBoxColumn
             // 
             this.fECHADataGridViewTextBoxColumn.DataPropertyName = "FECHA";
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.fECHADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.fECHADataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.fECHADataGridViewTextBoxColumn.HeaderText = "Fecha";
             this.fECHADataGridViewTextBoxColumn.MaxInputLength = 10;
             this.fECHADataGridViewTextBoxColumn.MinimumWidth = 30;
@@ -104,10 +104,10 @@
             // vALORBONODataGridViewTextBoxColumn
             // 
             this.vALORBONODataGridViewTextBoxColumn.DataPropertyName = "VALORBONO";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.vALORBONODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.vALORBONODataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.vALORBONODataGridViewTextBoxColumn.HeaderText = "Valor Bono";
             this.vALORBONODataGridViewTextBoxColumn.Name = "vALORBONODataGridViewTextBoxColumn";
             // 
@@ -154,6 +154,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormBonificacion";
             this.Text = "Bonificación";
+            this.Load += new System.EventHandler(this.FormBonificacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

@@ -32,19 +32,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsNomina = new NominaApp.dsNomina();
-            this.tBCONFIGHORAEXTRABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tBHORAEXTRABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbhoraextraTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBHORAEXTRATableAdapter();
-            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
-            this.tbconfighoraextraTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBCONFIGHORAEXTRATableAdapter();
-            this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cONFHEIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tBCONFIGHORAEXTRABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fECHADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cANTIDADDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mOTIVODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMPAPRUEBADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tBHORAEXTRABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbhoraextraTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBHORAEXTRATableAdapter();
+            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
+            this.tbconfighoraextraTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBCONFIGHORAEXTRATableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
@@ -70,38 +70,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
-            // 
-            // dsNomina
-            // 
-            this.dsNomina.DataSetName = "DataSet1";
-            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBCONFIGHORAEXTRABindingSource
-            // 
-            this.tBCONFIGHORAEXTRABindingSource.DataMember = "TBCONFIGHORAEXTRA";
-            this.tBCONFIGHORAEXTRABindingSource.DataSource = this.dsNomina;
-            // 
-            // tBHORAEXTRABindingSource
-            // 
-            this.tBHORAEXTRABindingSource.DataMember = "TBHORAEXTRA";
-            this.tBHORAEXTRABindingSource.DataSource = this.dsNomina;
-            // 
-            // tbhoraextraTableAdapter1
-            // 
-            this.tbhoraextraTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbempleadoTableAdapter1
-            // 
-            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbconfighoraextraTableAdapter1
-            // 
-            this.tbconfighoraextraTableAdapter1.ClearBeforeFill = true;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // eMPCEDDataGridViewTextBoxColumn
             // 
@@ -116,6 +85,16 @@
             this.eMPCEDDataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPCEDDataGridViewTextBoxColumn.Width = 200;
             // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            // 
+            // dsNomina
+            // 
+            this.dsNomina.DataSetName = "DataSet1";
+            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cONFHEIDDataGridViewTextBoxColumn
             // 
             this.cONFHEIDDataGridViewTextBoxColumn.DataPropertyName = "CONFHE_ID";
@@ -128,6 +107,11 @@
             this.cONFHEIDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cONFHEIDDataGridViewTextBoxColumn.ValueMember = "IDENTIFICACION";
             this.cONFHEIDDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tBCONFIGHORAEXTRABindingSource
+            // 
+            this.tBCONFIGHORAEXTRABindingSource.DataMember = "TBCONFIGHORAEXTRA";
+            this.tBCONFIGHORAEXTRABindingSource.DataSource = this.dsNomina;
             // 
             // fECHADataGridViewTextBoxColumn
             // 
@@ -172,6 +156,24 @@
             this.eMPAPRUEBADataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPAPRUEBADataGridViewTextBoxColumn.Width = 200;
             // 
+            // tBHORAEXTRABindingSource
+            // 
+            this.tBHORAEXTRABindingSource.DataMember = "TBHORAEXTRA";
+            this.tBHORAEXTRABindingSource.DataSource = this.dsNomina;
+            this.tBHORAEXTRABindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBHORAEXTRABindingSource_DataError);
+            // 
+            // tbhoraextraTableAdapter1
+            // 
+            this.tbhoraextraTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbempleadoTableAdapter1
+            // 
+            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbconfighoraextraTableAdapter1
+            // 
+            this.tbconfighoraextraTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormHoraExtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +181,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormHoraExtra";
             this.Text = "Horas Extras";
+            this.Load += new System.EventHandler(this.FormHoraExtra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

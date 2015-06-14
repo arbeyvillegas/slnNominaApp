@@ -32,23 +32,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tBPAGOEMPRESABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsNomina = new NominaApp.dsNomina();
-            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
-            this.tbpagoempresaTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBPAGOEMPRESATableAdapter();
-            this.tbempresaafiliacionTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPRESAAFILIACIONTableAdapter();
-            this.tBEMPRESAAFILIACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ePRNITDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tBEMPRESAAFILIACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNomina = new NominaApp.dsNomina();
             this.eMPCEDULADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tIPOAFILIACIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.fECHADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORPAGADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBPAGOEMPRESABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
+            this.tbpagoempresaTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBPAGOEMPRESATableAdapter();
+            this.tbempresaafiliacionTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPRESAAFILIACIONTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBPAGOEMPRESABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPRESAAFILIACIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBPAGOEMPRESABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -68,38 +68,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tBPAGOEMPRESABindingSource
-            // 
-            this.tBPAGOEMPRESABindingSource.DataMember = "TBPAGOEMPRESA";
-            this.tBPAGOEMPRESABindingSource.DataSource = this.dsNomina;
-            // 
-            // dsNomina
-            // 
-            this.dsNomina.DataSetName = "DataSet1";
-            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbempleadoTableAdapter1
-            // 
-            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbpagoempresaTableAdapter1
-            // 
-            this.tbpagoempresaTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbempresaafiliacionTableAdapter1
-            // 
-            this.tbempresaafiliacionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tBEMPRESAAFILIACIONBindingSource
-            // 
-            this.tBEMPRESAAFILIACIONBindingSource.DataMember = "TBEMPRESAAFILIACION";
-            this.tBEMPRESAAFILIACIONBindingSource.DataSource = this.dsNomina;
-            // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // ePRNITDataGridViewTextBoxColumn
             // 
@@ -114,6 +83,16 @@
             this.ePRNITDataGridViewTextBoxColumn.ValueMember = "NIT";
             this.ePRNITDataGridViewTextBoxColumn.Width = 200;
             // 
+            // tBEMPRESAAFILIACIONBindingSource
+            // 
+            this.tBEMPRESAAFILIACIONBindingSource.DataMember = "TBEMPRESAAFILIACION";
+            this.tBEMPRESAAFILIACIONBindingSource.DataSource = this.dsNomina;
+            // 
+            // dsNomina
+            // 
+            this.dsNomina.DataSetName = "DataSet1";
+            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // eMPCEDULADataGridViewTextBoxColumn
             // 
             this.eMPCEDULADataGridViewTextBoxColumn.DataPropertyName = "EMP_CEDULA";
@@ -126,6 +105,11 @@
             this.eMPCEDULADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.eMPCEDULADataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPCEDULADataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
             // 
             // tIPOAFILIACIONDataGridViewTextBoxColumn
             // 
@@ -164,6 +148,24 @@
             this.vALORPAGADODataGridViewTextBoxColumn.MaxInputLength = 13;
             this.vALORPAGADODataGridViewTextBoxColumn.Name = "vALORPAGADODataGridViewTextBoxColumn";
             // 
+            // tBPAGOEMPRESABindingSource
+            // 
+            this.tBPAGOEMPRESABindingSource.DataMember = "TBPAGOEMPRESA";
+            this.tBPAGOEMPRESABindingSource.DataSource = this.dsNomina;
+            this.tBPAGOEMPRESABindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBPAGOEMPRESABindingSource_DataError);
+            // 
+            // tbempleadoTableAdapter1
+            // 
+            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbpagoempresaTableAdapter1
+            // 
+            this.tbpagoempresaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbempresaafiliacionTableAdapter1
+            // 
+            this.tbempresaafiliacionTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormPagoEmpresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,11 +173,12 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormPagoEmpresa";
             this.Text = "Pago Empresa";
+            this.Load += new System.EventHandler(this.FormPagoEmpresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBPAGOEMPRESABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPRESAAFILIACIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBPAGOEMPRESABindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

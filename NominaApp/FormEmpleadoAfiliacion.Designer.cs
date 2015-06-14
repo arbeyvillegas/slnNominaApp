@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ePRNITDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPRESAAFILIACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsNomina = new NominaApp.dsNomina();
+            this.ePMCEDULADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tIPOAFILIACIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPLEADOAFILIACIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbempleadoafiliacionTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOAFILIACIONTableAdapter();
             this.tbempresaafiliacionTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPRESAAFILIACIONTableAdapter();
             this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
-            this.ePRNITDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ePMCEDULADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tIPOAFILIACIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPRESAAFILIACIONBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
@@ -62,38 +62,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tBEMPRESAAFILIACIONBindingSource
-            // 
-            this.tBEMPRESAAFILIACIONBindingSource.DataMember = "TBEMPRESAAFILIACION";
-            this.tBEMPRESAAFILIACIONBindingSource.DataSource = this.dsNomina;
-            // 
-            // dsNomina
-            // 
-            this.dsNomina.DataSetName = "DataSet1";
-            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
-            // 
-            // tBEMPLEADOAFILIACIONBindingSource
-            // 
-            this.tBEMPLEADOAFILIACIONBindingSource.DataMember = "TBEMPLEADOAFILIACION";
-            this.tBEMPLEADOAFILIACIONBindingSource.DataSource = this.dsNomina;
-            // 
-            // tbempleadoafiliacionTableAdapter1
-            // 
-            this.tbempleadoafiliacionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbempresaafiliacionTableAdapter1
-            // 
-            this.tbempresaafiliacionTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbempleadoTableAdapter1
-            // 
-            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // ePRNITDataGridViewTextBoxColumn
             // 
@@ -108,6 +77,16 @@
             this.ePRNITDataGridViewTextBoxColumn.ValueMember = "NIT";
             this.ePRNITDataGridViewTextBoxColumn.Width = 200;
             // 
+            // tBEMPRESAAFILIACIONBindingSource
+            // 
+            this.tBEMPRESAAFILIACIONBindingSource.DataMember = "TBEMPRESAAFILIACION";
+            this.tBEMPRESAAFILIACIONBindingSource.DataSource = this.dsNomina;
+            // 
+            // dsNomina
+            // 
+            this.dsNomina.DataSetName = "DataSet1";
+            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // ePMCEDULADataGridViewTextBoxColumn
             // 
             this.ePMCEDULADataGridViewTextBoxColumn.DataPropertyName = "EPM_CEDULA";
@@ -120,6 +99,11 @@
             this.ePMCEDULADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ePMCEDULADataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.ePMCEDULADataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
             // 
             // tIPOAFILIACIONDataGridViewTextBoxColumn
             // 
@@ -137,6 +121,24 @@
             this.tIPOAFILIACIONDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.tIPOAFILIACIONDataGridViewTextBoxColumn.Width = 150;
             // 
+            // tBEMPLEADOAFILIACIONBindingSource
+            // 
+            this.tBEMPLEADOAFILIACIONBindingSource.DataMember = "TBEMPLEADOAFILIACION";
+            this.tBEMPLEADOAFILIACIONBindingSource.DataSource = this.dsNomina;
+            this.tBEMPLEADOAFILIACIONBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBEMPLEADOAFILIACIONBindingSource_DataError);
+            // 
+            // tbempleadoafiliacionTableAdapter1
+            // 
+            this.tbempleadoafiliacionTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbempresaafiliacionTableAdapter1
+            // 
+            this.tbempresaafiliacionTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbempleadoTableAdapter1
+            // 
+            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormEmpleadoAfiliacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,6 +146,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormEmpleadoAfiliacion";
             this.Text = "Empleado Afiliación";
+            this.Load += new System.EventHandler(this.FormEmpleadoAfiliacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPRESAAFILIACIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

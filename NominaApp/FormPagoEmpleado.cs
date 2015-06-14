@@ -13,7 +13,6 @@ namespace NominaApp
         public FormPagoEmpleado()
         {
             InitializeComponent();
-            this.IniciarCargaDatos();
         }
 
         protected override void CargarDatos()
@@ -30,9 +29,37 @@ namespace NominaApp
 
         public override void GuardarDatos()
         {
-            this.Validate();
-            this.tBPAGOEMPLEADOBindingSource.EndEdit();
-            this.tbpagoempleadoTableAdapter1.Update(this.dsNomina.TBPAGOEMPLEADO);
+            try
+            {
+                this.Validate();
+                this.tBPAGOEMPLEADOBindingSource.EndEdit();
+                this.tbpagoempleadoTableAdapter1.Update(this.dsNomina.TBPAGOEMPLEADO);
+                this.EstablecerMensajeActualizacion("Pagos empleados actualizados satisfactoriamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al actualizar los datos: " + ex.Message);
+            }
         }
+
+        private void tBPAGOEMPLEADOBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            this.BindingSource_DataError(sender, e);
+
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            this.dataGridView_DataError(sender, e);
+
+        }
+
+        private void FormPagoEmpleado_Load(object sender, EventArgs e)
+        {
+            this.IniciarCargaDatos();
+        }
+
+
     }
 }

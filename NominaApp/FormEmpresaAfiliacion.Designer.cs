@@ -62,6 +62,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // nITDataGridViewTextBoxColumn
             // 
@@ -109,6 +110,7 @@
             // 
             this.tBEMPRESAAFILIACIONBindingSource.DataMember = "TBEMPRESAAFILIACION";
             this.tBEMPRESAAFILIACIONBindingSource.DataSource = this.dsNomina;
+            this.tBEMPRESAAFILIACIONBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBEMPRESAAFILIACIONBindingSource_DataError);
             // 
             // dsNomina
             // 
@@ -126,6 +128,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormEmpresaAfiliacion";
             this.Text = "Empresa Afiliación";
+            this.Load += new System.EventHandler(this.FormEmpresaAfiliacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPRESAAFILIACIONBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

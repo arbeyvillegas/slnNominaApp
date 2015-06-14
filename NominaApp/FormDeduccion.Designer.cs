@@ -60,6 +60,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // eMPCEDDataGridViewTextBoxColumn
             // 
@@ -107,6 +108,7 @@
             // 
             this.tBDEDUCCIONBindingSource.DataMember = "TBDEDUCCION";
             this.tBDEDUCCIONBindingSource.DataSource = this.dsNomina;
+            this.tBDEDUCCIONBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBDEDUCCIONBindingSource_DataError);
             // 
             // tbdeduccionTableAdapter1
             // 
@@ -123,6 +125,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormDeduccion";
             this.Text = "Días Deducción";
+            this.Load += new System.EventHandler(this.FormDeduccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

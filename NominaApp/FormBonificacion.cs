@@ -13,7 +13,6 @@ namespace NominaApp
         public FormBonificacion():base()
         {
             InitializeComponent();
-            this.IniciarCargaDatos();
         }
 
         protected override void CargarDatos()
@@ -35,6 +34,7 @@ namespace NominaApp
                 this.Validate();
                 this.tBBONIFICACIONBindingSource.EndEdit();
                 this.tbbonificacionTableAdapter1.Update(this.dsNomina.TBBONIFICACION);
+                this.EstablecerMensajeActualizacion("Bonificaciones actualizadas satisfactoriamente");
             }
             catch (Exception ex)
             {
@@ -50,6 +50,11 @@ namespace NominaApp
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             this.dataGridView_DataError(sender, e);
+        }
+
+        private void FormBonificacion_Load(object sender, EventArgs e)
+        {
+            this.IniciarCargaDatos();
         }       
     }
 }

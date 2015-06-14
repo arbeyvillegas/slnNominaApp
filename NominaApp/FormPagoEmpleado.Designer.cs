@@ -34,17 +34,17 @@
             this.tbpagoempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBPAGOEMPLEADOTableAdapter();
             this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dsNomina = new NominaApp.dsNomina();
-            this.tBPAGOEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsNomina = new NominaApp.dsNomina();
             this.tIPOPAGODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.fECHADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORPAGADODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBPAGOEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBPAGOEMPLEADOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbpagoempleadoTableAdapter1
@@ -71,21 +71,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // dsNomina
-            // 
-            this.dsNomina.DataSetName = "DataSet1";
-            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBPAGOEMPLEADOBindingSource
-            // 
-            this.tBPAGOEMPLEADOBindingSource.DataMember = "TBPAGOEMPLEADO";
-            this.tBPAGOEMPLEADOBindingSource.DataSource = this.dsNomina;
-            // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // eMPCEDDataGridViewTextBoxColumn
             // 
@@ -99,6 +85,16 @@
             this.eMPCEDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.eMPCEDDataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPCEDDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            // 
+            // dsNomina
+            // 
+            this.dsNomina.DataSetName = "DataSet1";
+            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tIPOPAGODataGridViewTextBoxColumn
             // 
@@ -136,6 +132,12 @@
             this.vALORPAGADODataGridViewTextBoxColumn.MaxInputLength = 13;
             this.vALORPAGADODataGridViewTextBoxColumn.Name = "vALORPAGADODataGridViewTextBoxColumn";
             // 
+            // tBPAGOEMPLEADOBindingSource
+            // 
+            this.tBPAGOEMPLEADOBindingSource.DataMember = "TBPAGOEMPLEADO";
+            this.tBPAGOEMPLEADOBindingSource.DataSource = this.dsNomina;
+            this.tBPAGOEMPLEADOBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBPAGOEMPLEADOBindingSource_DataError);
+            // 
             // FormPagoEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,10 +145,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormPagoEmpleado";
             this.Text = "Pago Empleado";
+            this.Load += new System.EventHandler(this.FormPagoEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBPAGOEMPLEADOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

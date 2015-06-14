@@ -13,7 +13,6 @@ namespace NominaApp
         public FormHoraExtra():base()
         {
             InitializeComponent();
-            this.IniciarCargaDatos();
         }
 
         protected override void CargarDatos()
@@ -32,9 +31,36 @@ namespace NominaApp
 
         public override void GuardarDatos()
         {
-            this.Validate();
-            this.tBHORAEXTRABindingSource.EndEdit();
-            this.tbhoraextraTableAdapter1.Update(this.dsNomina.TBHORAEXTRA);
+            try
+            {
+                this.Validate();
+                this.tBHORAEXTRABindingSource.EndEdit();
+                this.tbhoraextraTableAdapter1.Update(this.dsNomina.TBHORAEXTRA);
+                this.EstablecerMensajeActualizacion("Horas extras actualizadas satisfactoriamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al actualizar los datos: " + ex.Message);
+
+            }
+        }
+
+        private void tBHORAEXTRABindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            this.BindingSource_DataError(sender, e);
+
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            this.dataGridView_DataError(sender, e);
+
+        }
+
+        private void FormHoraExtra_Load(object sender, EventArgs e)
+        {
+            this.IniciarCargaDatos();
         }
     }
 }

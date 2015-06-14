@@ -11,10 +11,19 @@ using System.Windows.Forms;
 
 namespace NominaApp
 {
+    public delegate void IniciaProgresoDelegate();
+
+    public delegate void TerminaProgresoDelegate();
+
+    public delegate void EstablecerMensajeDelegate(string mensaje);
+
     public partial class FormPadre : Form
     {
 
-        protected BindingSource bindingSource;
+        public IniciaProgresoDelegate IniciarProgreso;
+        public TerminaProgresoDelegate TerminarProgreso;
+        public EstablecerMensajeDelegate EstablecerMensaje;
+        
 
         public FormPadre()
         {
@@ -37,6 +46,10 @@ namespace NominaApp
 
         protected void IniciarCargaDatos()
         {
+            if (this.IniciarProgreso != null)
+            {
+                this.IniciarProgreso();
+            }
             backgroundWorker1.RunWorkerAsync();
         }
 
@@ -55,7 +68,11 @@ namespace NominaApp
             {
                 MessageBox.Show("Ocurrio error en la conexión (Revise la cadena de conexión en .config): " + e.Error.Message);
             }
-            
+
+            if (this.TerminarProgreso != null)
+            {
+                this.TerminarProgreso();
+            }            
         }
 
 
@@ -72,6 +89,14 @@ namespace NominaApp
         public void dataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             MessageBox.Show("Ocurrió un error al actualizar los datos: " + e.Exception.Message);
+        }
+
+        public void EstablecerMensajeActualizacion(string mensaje)
+        {
+            if (this.EstablecerMensaje != null)
+            {
+                this.EstablecerMensaje(mensaje);
+            }
         }
     }
 }

@@ -38,12 +38,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eMPCEDULADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsNomina = new NominaApp.dsNomina();
-            this.tBLIQNOMINABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbliqnominaTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBLIQNOMINATableAdapter();
-            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
-            this.eMPCEDULADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.fECHADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mESDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qUINCENADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +50,9 @@
             this.pENSIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sALUDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aUXILIOTRANSPORTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tBLIQNOMINABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbliqnominaTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBLIQNOMINATableAdapter();
+            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
@@ -81,29 +81,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(659, 422);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
-            // 
-            // dsNomina
-            // 
-            this.dsNomina.DataSetName = "DataSet1";
-            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBLIQNOMINABindingSource
-            // 
-            this.tBLIQNOMINABindingSource.DataMember = "TBLIQNOMINA";
-            this.tBLIQNOMINABindingSource.DataSource = this.dsNomina;
-            // 
-            // tbliqnominaTableAdapter1
-            // 
-            this.tbliqnominaTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbempleadoTableAdapter1
-            // 
-            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // eMPCEDULADataGridViewTextBoxColumn
             // 
@@ -117,6 +95,16 @@
             this.eMPCEDULADataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.eMPCEDULADataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPCEDULADataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            // 
+            // dsNomina
+            // 
+            this.dsNomina.DataSetName = "DataSet1";
+            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fECHADataGridViewTextBoxColumn
             // 
@@ -219,6 +207,20 @@
             this.aUXILIOTRANSPORTEDataGridViewTextBoxColumn.MaxInputLength = 8;
             this.aUXILIOTRANSPORTEDataGridViewTextBoxColumn.Name = "aUXILIOTRANSPORTEDataGridViewTextBoxColumn";
             // 
+            // tBLIQNOMINABindingSource
+            // 
+            this.tBLIQNOMINABindingSource.DataMember = "TBLIQNOMINA";
+            this.tBLIQNOMINABindingSource.DataSource = this.dsNomina;
+            this.tBLIQNOMINABindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBLIQNOMINABindingSource_DataError);
+            // 
+            // tbliqnominaTableAdapter1
+            // 
+            this.tbliqnominaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbempleadoTableAdapter1
+            // 
+            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormLiquidacionNomina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +228,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormLiquidacionNomina";
             this.Text = "Liquidación Nómina";
+            this.Load += new System.EventHandler(this.FormLiquidacionNomina_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

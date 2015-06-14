@@ -34,17 +34,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tBEMPLEADOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsNomina = new NominaApp.dsNomina();
-            this.tBCONFIGEMPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tbconfigempTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBCONFIGEMPTableAdapter();
-            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
-            this.eMPCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sALARIOBASEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aUXTRANSPORTEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORDIADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vALORHORADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMPJEFEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tBCONFIGEMPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbconfigempTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBCONFIGEMPTableAdapter();
+            this.tbempleadoTableAdapter1 = new NominaApp.DataSet1TableAdapters.TBEMPLEADOTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).BeginInit();
@@ -69,29 +69,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(596, 431);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // tBEMPLEADOBindingSource
-            // 
-            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
-            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
-            // 
-            // dsNomina
-            // 
-            this.dsNomina.DataSetName = "DataSet1";
-            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tBCONFIGEMPBindingSource
-            // 
-            this.tBCONFIGEMPBindingSource.DataMember = "TBCONFIGEMP";
-            this.tBCONFIGEMPBindingSource.DataSource = this.dsNomina;
-            // 
-            // tbconfigempTableAdapter1
-            // 
-            this.tbconfigempTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tbempleadoTableAdapter1
-            // 
-            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridView1_DataError);
             // 
             // eMPCEDDataGridViewTextBoxColumn
             // 
@@ -105,6 +83,16 @@
             this.eMPCEDDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.eMPCEDDataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPCEDDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // tBEMPLEADOBindingSource
+            // 
+            this.tBEMPLEADOBindingSource.DataMember = "TBEMPLEADO";
+            this.tBEMPLEADOBindingSource.DataSource = this.dsNomina;
+            // 
+            // dsNomina
+            // 
+            this.dsNomina.DataSetName = "DataSet1";
+            this.dsNomina.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sALARIOBASEDataGridViewTextBoxColumn
             // 
@@ -159,15 +147,29 @@
             this.eMPJEFEDataGridViewTextBoxColumn.ValueMember = "CEDULA";
             this.eMPJEFEDataGridViewTextBoxColumn.Width = 200;
             // 
+            // tBCONFIGEMPBindingSource
+            // 
+            this.tBCONFIGEMPBindingSource.DataMember = "TBCONFIGEMP";
+            this.tBCONFIGEMPBindingSource.DataSource = this.dsNomina;
+            this.tBCONFIGEMPBindingSource.DataError += new System.Windows.Forms.BindingManagerDataErrorEventHandler(this.tBCONFIGEMPBindingSource_DataError);
+            // 
+            // tbconfigempTableAdapter1
+            // 
+            this.tbconfigempTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tbempleadoTableAdapter1
+            // 
+            this.tbempleadoTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormConfigEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 431);
             this.Controls.Add(this.dataGridView1);
-            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "FormConfigEmpleado";
             this.Text = "Configuración Empleado";
+            this.Load += new System.EventHandler(this.FormConfigEmpleado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tBEMPLEADOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsNomina)).EndInit();

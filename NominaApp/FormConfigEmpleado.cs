@@ -9,7 +9,6 @@ namespace NominaApp
         public FormConfigEmpleado():base()
         {
             InitializeComponent();
-            this.IniciarCargaDatos();
         }
 
 
@@ -27,9 +26,32 @@ namespace NominaApp
 
         public override void GuardarDatos()
         {
-            this.Validate();
-            this.tBCONFIGEMPBindingSource.EndEdit();
-            tbconfigempTableAdapter1.Update(this.dsNomina.TBCONFIGEMP);
+            try
+            {
+                this.Validate();
+                this.tBCONFIGEMPBindingSource.EndEdit();
+                tbconfigempTableAdapter1.Update(this.dsNomina.TBCONFIGEMP);
+                this.EstablecerMensajeActualizacion("Configuración empleado actualizado satisfactoriamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al actualizar los datos: " + ex.Message);
+            }
+        }
+
+        private void tBCONFIGEMPBindingSource_DataError(object sender, BindingManagerDataErrorEventArgs e)
+        {
+            this.BindingSource_DataError(sender, e);
+        }
+
+        private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            this.dataGridView_DataError(sender, e);
+        }
+
+        private void FormConfigEmpleado_Load(object sender, EventArgs e)
+        {
+            this.IniciarCargaDatos();
         }
     }
 }

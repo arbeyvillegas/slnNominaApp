@@ -15,6 +15,8 @@ namespace NominaApp
     {
         private int childFormNumber = 0;
 
+        
+
         public FormContenedor()
         {
             CultureInfo cultureInfo = new CultureInfo("es-CO");
@@ -120,6 +122,9 @@ namespace NominaApp
             if (formulario == null)
             {
                 formulario = new T();
+                formulario.IniciarProgreso =new IniciaProgresoDelegate(IniciarProgreso) ;
+                formulario.TerminarProgreso = new TerminaProgresoDelegate(FinalizarProgreso);
+                formulario.EstablecerMensaje = new EstablecerMensajeDelegate(EstablecerMensajeEstado);
                 formulario.MdiParent = this;
                 formulario.Show();
                 formulario.WindowState = FormWindowState.Maximized;
@@ -132,6 +137,18 @@ namespace NominaApp
                     formulario.WindowState = FormWindowState.Maximized;
                 }
             }
+        }
+
+        public void IniciarProgreso()
+        {
+            this.toolStripStatusLabel.Text = "Consultando";
+            this.toolStripProgressBar1.Visible = true;
+        }
+
+        public void FinalizarProgreso()
+        {
+            this.toolStripStatusLabel.Text = string.Empty;
+            this.toolStripProgressBar1.Visible = false;
         }
 
         private T ExisteFormulario<T>() where T : FormPadre
@@ -207,6 +224,16 @@ namespace NominaApp
         private void pagoEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.AbrirFormlario<FormPagoEmpresa>();
+        }
+
+        public void EstablecerMensajeEstado(string mensaje)
+        {
+            this.toolStripStatusLabel.Text = mensaje;
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
